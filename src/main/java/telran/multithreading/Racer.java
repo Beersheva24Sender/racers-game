@@ -17,7 +17,6 @@ public class Racer extends Thread {
 		int maxSleep = race.getMaxSleep();
 		int distance = race.getDistance();
 		Random random = new Random();
-		long startTime = System.currentTimeMillis();
 
 		for (int i = 0; i < distance; i++) {
 			try {
@@ -26,12 +25,6 @@ public class Racer extends Thread {
 			} catch (InterruptedException e) {
 			}
 		}
-
-		long finishTime = System.currentTimeMillis();
-		long runningTime = finishTime - startTime;
-
-		int place = race.getResults().size() + 1;
-		race.addResult(new Result(place, number, runningTime));
 		race.winner.compareAndSet(-1, number);
 	}
 }

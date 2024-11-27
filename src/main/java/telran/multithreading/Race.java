@@ -8,7 +8,6 @@ public class Race {
 	private int distance;
 	private int minSleep;
 	private int maxSleep;
-	private ConcurrentLinkedQueue<Result> results = new ConcurrentLinkedQueue<>();
 	AtomicInteger winner = new AtomicInteger(-1);
 
 	public Race(int distance, int minSleep, int maxSleep) {
@@ -32,13 +31,4 @@ public class Race {
 	public int getMaxSleep() {
 		return maxSleep;
 	}
-
-	public void addResult(Result result) {
-		results.add(result);
-	}
-
-	public ConcurrentLinkedQueue<Result> getResults() {
-		return results;
-	}
-
 }

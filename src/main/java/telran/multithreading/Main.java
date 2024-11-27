@@ -40,11 +40,7 @@ public class Main {
     }
 
     private static void displayWinner(Race race) {
-        System.out.println("Place Racer Running Time");
-        for (Result result : race.getResults()) {
-            System.out.println(result);
-        }
-
+        System.out.println("Congratulations to Racer " + race.getWinner());
     }
 
     private static void joinRacers(Racer[] racers) {
